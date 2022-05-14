@@ -9,6 +9,7 @@
       Play
     </button>
   </div>
+  <Block v-if="isPlaying"  />
 </template>
 
 <script>
