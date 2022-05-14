@@ -1,30 +1,52 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <header>
+    <h1 class="header">I like to welcome ya'll to the TommyDemian Show</h1>
+  </header>
+  <div>
+  <button 
+    class="button"
+    @click="onClick"
+  >
+      Play
+    </button>
+  </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  methods:{
+    onClick() {
+      
+    }
+  }
+}
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --primary-clr:#ffffff;
+  --alternate-text-clr: #000000;
+  --secondary-clr:#14213d;
+  --accent-clr: #fca311; 
+  --accent-clr-pseudo: #efac3f;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header{
+  margin-top: 3em;
+  font-size: 2.5rem;
+  color: #000000;
   text-align: center;
-  color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-}
+.button {
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
