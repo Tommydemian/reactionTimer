@@ -12,8 +12,14 @@
 </template>
 
 <script>
+import Block from './components/Block.vue';
+
+
 export default {
   name: 'App',
+  components:{
+    Block,
+  },
   data() {
     return {
       isPlaying: false,
@@ -24,6 +30,7 @@ export default {
     startGame() {
       this.delay = 2000 + Math.random() * 3000;
       this.isPlaying = true;
+      console.info(this.delay);
     }
   }
 }
@@ -61,6 +68,7 @@ export default {
   padding: 1em 1.5em;
   border: none; 
   border-radius: 6px;
+  cursor: pointer;
   background-color: var(--accent-clr);
   transition:0.5s;
 }
