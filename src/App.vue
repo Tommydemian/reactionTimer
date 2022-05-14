@@ -2,11 +2,10 @@
   <header>
     <h1 class="header">I like to welcome ya'll to the TommyDemian Show</h1>
   </header>
-  <div>
+  <div class="button-container" >
   <button 
     class="button"
-    @click="onClick"
-  >
+    @click="startGame">
       Play
     </button>
   </div>
@@ -15,9 +14,16 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      isPlaying: false,
+      delay: null
+    }  
+  },
   methods:{
-    onClick() {
-      
+    startGame() {
+      this.delay = 2000 + Math.random() * 3000;
+      this.isPlaying = true;
     }
   }
 }
@@ -45,8 +51,20 @@ export default {
   color: #000000;
   text-align: center;
 }
-
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button {
-
+  margin: 2em auto;
+  padding: 1em 1.5em;
+  border: none; 
+  border-radius: 6px;
+  background-color: var(--accent-clr);
+  transition:0.5s;
+}
+.button:hover {
+  background-color: var(--accent-clr-pseudo);
 }
 </style>
